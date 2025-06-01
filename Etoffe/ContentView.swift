@@ -17,6 +17,6 @@ struct ContentView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ContentView()
+    HomeView()
         .environment(AppModel())
 }
