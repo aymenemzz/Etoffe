@@ -10,17 +10,14 @@ import RealityKit
 import RealityKitContent
 
 struct ImmersiveView: View {
-
+    /// Entry point for the Modula immersive experience.
+    /// Wraps `ImmersiveModulaView` inside a container RealityView so we can
+    /// load additional environment entities if needed.
     var body: some View {
-        RealityView { content in
-            // Add the initial RealityKit content
-            if let immersiveContentEntity = try? await Entity(named: "Immersive", in: realityKitContentBundle) {
-                content.add(immersiveContentEntity)
-
-                // Put skybox here.  See example in World project available at
-                // https://developer.apple.com/
+        ImmersiveModulaView()
+            .task {
+                // Future setup for global environment (skybox, lighting...)
             }
-        }
     }
 }
 
